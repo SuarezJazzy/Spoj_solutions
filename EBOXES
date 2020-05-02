@@ -1,0 +1,16 @@
+//SIMPLE MATHEMATICS.
+
+#include<iostream>
+using namespace std;
+
+int main(){
+	int testcases;
+	cin>>testcases;
+	
+	while(testcases--){
+		long int n,k,t,f,ans;
+		cin>>n>>k>>t>>f;
+		ans=n+k*((f-n)/(k-1));
+		cout<<ans<<endl;
+	}
+}
