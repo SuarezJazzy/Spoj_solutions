@@ -1,0 +1,33 @@
+// An odd number is itself the biggest odd divisor of the number. For an even number the concept used here is that if a number is divided 
+//by 2, only its even factor is lost. So for an even number the largest odd divisor for 'a' will be equal to the largest odd 
+//divisor of 'a/2'. 
+
+#include<iostream>
+using namespace std;
+
+int main(){
+	int t;
+	cin>>t;
+	int p=1;
+	while(t--){
+		unsigned long long int a,i,j,ans;
+		
+		cin>>a;
+		if(a%2!=0)
+		cout<<"Case "<<p<<": "<<a<<endl;
+		else{
+			while(1){
+				a=a/2;
+				if(a%2!=0)
+				{
+					cout<<"Case "<<p<<": "<<a<<endl;
+					break;
+				}
+			
+			}
+				
+		}
+	
+	p++;
+	}
+}
