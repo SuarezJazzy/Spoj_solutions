@@ -1,0 +1,42 @@
+//Go through the link given below for help.
+//https://www.geeksforgeeks.org/find-excel-column-name-given-number/
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+int t;
+cin>>t;
+while(t--){
+	unsigned long long int n;
+	cin>>n;
+	string str;
+	while(n>0){
+	 int r=n%5;
+	 if(r==0){
+	 str.push_back('u');
+	 n=n/5 -1;
+	}
+	else
+	{
+		if(r==1)
+		str.push_back('m');
+		if(r==2)
+		str.push_back('a');
+		if(r==3)
+		str.push_back('n');
+		if(r==4)
+		str.push_back('k');
+		
+		n=n/5;
+	}
+
+}
+string::iterator it;
+	for(it=str.end()-1;it>=str.begin();it--){
+		cout<<*it;
+	}
+	cout<<endl;
+	str.clear();
+	}
+}
