@@ -1,0 +1,18 @@
+// BRAHMAGUPTA'S formula for calcualtion of area of quadrilateral and setprecision().
+
+#include<iostream>
+#include<cmath>
+#include<iomanip>
+using namespace std;
+
+int main(){
+	int t;
+	cin>>t;
+	while(t--){
+		double a,b,c,d,s,p;
+		cin>>a>>b>>c>>d;
+		s=(a+b+c+d)/2;
+		p=(s-a)*(s-b)*(s-c)*(s-d);
+		cout<<fixed<<std:: setprecision(2)<<sqrt(p)<<endl;
+	}
+}
