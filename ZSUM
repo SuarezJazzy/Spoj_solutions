@@ -1,0 +1,36 @@
+// Concepts required: Modular exponentiation.
+//Link to learn the required concepts: https://www.hackerearth.com/practice/math/number-theory/basic-number-theory-1/tutorial/
+
+
+#include<iostream>
+using namespace std;
+long long int modularexponentiation(long long int a,long long int b,long long int m){
+	if(b==0)
+	return 1;
+	
+	if(b%2==0)
+	return modularexponentiation((a*a)%m,b/2,m);
+	else
+	return (a*modularexponentiation((a*a)%m,(b-1)/2,m))%m;
+}
+
+int main(){
+	
+	while(1){
+	long int n;long int k;
+	cin>>n>>k;
+	if(n==0 && k==0)
+	break;
+	
+	long long int a,b,c,d;
+	a=2*modularexponentiation(n-1,k,10000007);
+	b=2*modularexponentiation(n-1,n-1,10000007);
+	c=modularexponentiation(n,k,10000007);
+	d=modularexponentiation(n,n,10000007);
+
+	
+	unsigned long long int ans;
+	ans=(a+b+c+d)%10000007;
+	cout<<ans<<endl;
+	}
+}
