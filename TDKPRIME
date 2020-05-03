@@ -1,0 +1,64 @@
+// Learn segmented sieve for primes
+// https://www.geeksforgeeks.org/segmented-sieve/
+// https://www.youtube.com/watch?v=fByR5N-TseY
+
+#include<bits/stdc++.h>
+using namespace std;
+vector<int> v1;
+void segmentsieve(unsigned long long int a){
+	bool arr[a+1];
+
+	memset(arr,true,sizeof(arr));
+	arr[0]=arr[1]=false;
+	for( unsigned long long int i=2;i<=sqrt(a);i++){
+		for(long long j=2*i;j<=a;j=j+i){
+			arr[j]=false;
+		}
+	}
+
+	for(unsigned long long int i=2;i<=a;i++){
+		if(arr[i]==true)
+		v1.push_back(i);
+	}
+
+	vector<int >::iterator it;
+
+}
+void prime(unsigned long long int n){
+
+unsigned long long int a=sqrt(n);
+segmentsieve(a);
+long long size=n-a,low=a+1,high=n;
+bool arr[size];
+memset(arr,true,sizeof(arr));
+vector<int>::iterator it;
+for( it=v1.begin();it<v1.end();it++){
+		long long curr=(a+1)/(*it)*(*it) ;
+		if(curr<low)
+		curr=curr+*it;
+	for(long long j=curr;j<=n;j+=*it)
+	{
+		
+		arr[j-a-1]=false;	
+	}
+	
+}
+for(long long i=0;i<size;i++){
+	if(arr[i]==true){
+		v1.push_back(i+a+1);
+	}
+}
+
+}
+
+
+int main(){
+prime(87000008);
+int t;
+cin>>t;
+while(t--){
+	int k;
+	cin>>k;
+	cout<<v1[k-1]<<endl;
+}
+}
